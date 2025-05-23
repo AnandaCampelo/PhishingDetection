@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Detector Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Phishing Detector</h1>
+
+    <input type="text" id="urlInput" placeholder="Enter URL to analyze">
+    <button onclick="analyze()">Analyze</button>
+    <button onclick="exportCSV()">Export CSV</button>
+    <button onclick="resetHistory()">Reset History</button>
+    <div id="indicator" style="margin-top: 10px; font-size: 1.2em;"></div>
+    <div id="loader" style="display:none; margin-top: 10px;"> Analisando...</div>
+
+    <h2>Analysis Result</h2>
+    <pre id="result"></pre>
+
+    <table id="resultTable" style="margin: 20px auto; border-collapse: collapse; width: 80%;"></table>
+
+    <h2>Similarity Chart</h2>
+    <canvas id="myChart" width="400" height="200"></canvas>
+
+    <div id="history"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
