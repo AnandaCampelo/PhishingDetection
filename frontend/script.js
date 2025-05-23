@@ -1,7 +1,7 @@
 let history = [];
 let myChart = null;
 
-const BACKEND_URL = "https://phishing-backend.up.railway.app";
+const BACKEND_URL = "https://phishingdetection-production.up.railway.app";
 
 async function analyze() {
     const url = document.getElementById('urlInput').value;
