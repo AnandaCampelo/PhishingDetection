@@ -1,6 +1,8 @@
 let history = [];
 let myChart = null;
 
+const BACKEND_URL = "https://phishing-backend.up.railway.app";
+
 async function analyze() {
     const url = document.getElementById('urlInput').value;
 
@@ -12,7 +14,7 @@ async function analyze() {
     document.getElementById('loader').classList.add('show');
 
     try {
-        const res = await fetch(`http://127.0.0.1:8000/analyze?url=${encodeURIComponent(url)}`);
+        const res = await fetch(`${BACKEND_URL}/analyze?url=${encodeURIComponent(url)}`);
         
         if (!res.ok) {
             throw new Error(`HTTP error! status: ${res.status}`);
@@ -50,7 +52,6 @@ function updateHistory() {
 function drawChart(similarity) {
     const ctx = document.getElementById('myChart').getContext('2d');
 
-    // Destroi gráfico anterior, se existir e for um Chart
     if (myChart && typeof myChart.destroy === 'function') {
         myChart.destroy();
     }
@@ -87,10 +88,10 @@ function updateIndicator(isPhishing) {
 }
 
 function exportCSV() {
-    fetch('http://127.0.0.1:8000/export')
+    fetch(`${BACKEND_URL}/export`)
         .then(response => {
             if (response.ok) {
-                window.location.href = 'http://127.0.0.1:8000/export';
+                window.location.href = `${BACKEND_URL}/export`;
             } else {
                 alert("Erro ao exportar CSV.");
             }
