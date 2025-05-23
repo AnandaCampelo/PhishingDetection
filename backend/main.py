@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Query
 from pydantic import BaseModel
 from fastapi.responses import FileResponse
-from backend.detection import full_analysis
+from detection import full_analysis
 import csv
 from fastapi.middleware.cors import CORSMiddleware
 
