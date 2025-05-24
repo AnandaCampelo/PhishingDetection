@@ -2,7 +2,7 @@
 
 Sistema completo de detecção de phishing com análise heurística e interface web interativa.
 
-[Phishing Detector Website](https://phishing-detection-iki2npxgd-anandacampelos-projects.vercel.app/)
+[Phishing Detector Website](https://phishing-detection-khaki.vercel.app/)
 
 ---
 
